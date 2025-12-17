@@ -34,7 +34,7 @@ public class ConsLoGrade implements ILoGrade{
 
 	@Override
 	public ILoGrade sortByGradeDec() {
-		return this.rest.insertByOrder(this.first);
+		return this.rest.sortByGradeDec().insertByOrder(this.first);
 	}
 
 	@Override
@@ -42,7 +42,7 @@ public class ConsLoGrade implements ILoGrade{
 		if(this.first.getGrade() > that.getGrade()) {
 			return new ConsLoGrade(this.first, this.rest.insertByOrder(that));
 		}
-		return new ConsLoGrade(that, this.sortByGradeDec());
+		return new ConsLoGrade(that, this);
 	}
 	
 }

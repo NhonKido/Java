@@ -11,6 +11,7 @@ public class testing extends TestCase {
 		ScoreBoard nhon;
 		
 		course1 = new Course(12, 19292, "dao lua");
+		
 		record1 = new GradeRecord(91.1, course1);
 		course2 = new Course(43, 8832,"ban quat");
 		record2 = new GradeRecord(84.9, course2);
@@ -18,23 +19,37 @@ public class testing extends TestCase {
 	 	all = new ConsLoGrade(record1,new ConsLoGrade(record2, empty));
 		
 		nhon = new ScoreBoard("Nhon Dang", "dh25dtc",all);
-		System.out.println(nhon.toString());
+
 	}
 	
 	protected void setUp() throws Exception {
 		super.setUp();
 		ILoGrade empty,all;
-		Course course1,course2;
-		GradeRecord record1, record2;
+		Course course1,course2, course3;
+		GradeRecord record1, record2, record3;
 		ScoreBoard nhon;
 		
 		course1 = new Course(12, 19292, "dao lua");
-		record1 = new GradeRecord(91.1, course1);
 		course2 = new Course(43, 8832,"ban quat");
+		course3 = new Course(26,13,"xao tro");
+		record1 = new GradeRecord(91.1, course1);
 		record2 = new GradeRecord(84.9, course2);
+		record3 = new GradeRecord(100, course3);
 		empty = new MTLoGrade();
-	 	all = new ConsLoGrade(record1,new ConsLoGrade(record2, empty));
+	 	all = new ConsLoGrade(record2,new ConsLoGrade(record1, new ConsLoGrade(record3, empty)));
+		nhon = new ScoreBoard("Nhon Dang", "dh25dtc",all);	 	
 	 	
+		System.out.println(nhon.toString());
+		nhon.sortByGradeDec();
+		
+		//before sort
+		System.out.println(nhon.toString());
+		
+		nhon = new ScoreBoard("Nhon Dang", "dh25dtc",all);
+		
+		//19292 + 8832 + 13 = 
+		
+		
 	 	
 	}
 
