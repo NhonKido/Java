@@ -22,8 +22,7 @@ public class testing extends TestCase {
 
 	}
 	
-	protected void setUp() throws Exception {
-		super.setUp();
+	public void testmethod() {
 		ILoGrade empty,all;
 		Course course1,course2, course3;
 		GradeRecord record1, record2, record3;
@@ -37,8 +36,7 @@ public class testing extends TestCase {
 		record3 = new GradeRecord(100, course3);
 		empty = new MTLoGrade();
 	 	all = new ConsLoGrade(record2,new ConsLoGrade(record1, new ConsLoGrade(record3, empty)));
-		nhon = new ScoreBoard("Nhon Dang", "dh25dtc",all);	 	
-	 	
+		nhon = new ScoreBoard("Nhon Dang", "dh25dtc",all);
 		System.out.println(nhon.toString());
 		nhon.sortByGradeDec();
 		
@@ -47,10 +45,14 @@ public class testing extends TestCase {
 		
 		nhon = new ScoreBoard("Nhon Dang", "dh25dtc",all);
 		
-		//19292 + 8832 + 13 = 
+		//19292 + 8832 + 13 = 28,137
+		assertEquals(28137, nhon.howManyCredit());
 		
-		
+		//(19292*91.1 + 8832*84.0 + 13*100)/3 = 4,945,733,393.3
+		assertEquals(4945733393.3, nhon.gradeAverage(),0.1);
+		System.out.println(nhon.gradeAverage());
 	 	
 	}
+	
 
 }

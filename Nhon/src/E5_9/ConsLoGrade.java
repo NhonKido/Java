@@ -23,7 +23,7 @@ public class ConsLoGrade implements ILoGrade{
 	@Override
 	public double getAverage() {
 		int manyGrade = this.getGradeNum();
-		double total =  this.first.getTotal() + this.rest.getAverage();
+		double total =  this.first.getTotal() + this.rest.getTotal();
 		return total / manyGrade;
 	}
 
