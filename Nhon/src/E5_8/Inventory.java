@@ -6,5 +6,7 @@ public interface Inventory {
 	public double getPrice();
 	public void replaceName();
 	public Inventory eliminate(String toyOfName);
+	public String getToyName();
+
 	
 }

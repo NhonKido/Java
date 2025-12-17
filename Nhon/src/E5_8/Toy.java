@@ -22,4 +22,9 @@ public class Toy {
 	public void replaceName() {
 		if(this.name == "robot") {this.name = "r2d2";}
 	}
+	
+	@Override
+	public String toString() {
+		return String.format("toy's name: %s ; price: %s ; origin: %s", this.name, this.price, this.origin);
+	}
 }

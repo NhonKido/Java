@@ -17,12 +17,12 @@ public class Cinventory implements Inventory{
 	@Override
 	public int PlusOne() {
 		// TODO Auto-generated method stub
-		return 1;
+		return 1 + this.rest.PlusOne();
 	}
 	
 	@Override
 	public double getPrice() {
-		return this.first.getPrice();
+		return this.first.getPrice() + this.rest.getPrice();
 	}
 	
 	@Override
@@ -48,6 +48,15 @@ public class Cinventory implements Inventory{
 		else {
 			return this.rest.eliminate(toyOfName);
 		}
+	}
+	
+	@Override
+	public String toString() {
+		return this.first.toString() + "\n" + this.rest.toString();
+	}
+	
+	public String getToyName() {
+		return this.first.getName();
 	}
 
 }

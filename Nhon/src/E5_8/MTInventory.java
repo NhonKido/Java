@@ -33,5 +33,16 @@ public class MTInventory implements Inventory{
 		// TODO Auto-generated method stub
 		return new MTInventory();
 	}
+	
+	@Override
+	public String toString() {
+		return "";
+	}
+
+	@Override
+	public String getToyName() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 
 }
