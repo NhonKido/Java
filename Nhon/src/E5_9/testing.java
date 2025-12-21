@@ -61,7 +61,10 @@ public class testing extends TestCase {
 		
 		//test equals
 		ScoreBoard nhon2 = new ScoreBoard("Nhon Dang", "dh25dtc",all);
+		ScoreBoard Ha = new ScoreBoard("Ha", "dh25dtc", new ConsLoGrade(record2,new ConsLoGrade(record1, empty)));
 		assertTrue(nhon.equals(nhon2));
+		//different people
+		assertFalse(nhon.equals(Ha));
 		
 	 	
 	}
