@@ -20,22 +20,26 @@ public class ScoreBoard {
 		return String.format("student: %s , class: %s , Grades: [ \n%s]",this.name, this.Sclass, this.listLoGrade);
 	}
 	
+	@Override
+	public boolean equals(Object that) {
+		if()
+	}
+	
 	public int howManyCredit() {
 		return this.listLoGrade.howManyCredit();
 	}
 	
 	public double gradeAverage() {
-		return round(this.listLoGrade.getAverage(),1);
+		return (this.listLoGrade.getAverage());
 	}
 	
 	public void sortByGradeDec() {
 		this.listLoGrade = this.listLoGrade.sortByGradeDec();
 	}
 	
-	public static double round(double value, int places) {
-	    if (places < 0) throw new IllegalArgumentException();
-
-	    double factor = Math.pow(10, places); // 10^places
-	    return Math.round(value * factor) / factor;
+	public ILoGrade ListGreaterThan(double alt_grade) {
+		ILoGrade tempList = listLoGrade; tempList.sortByGradeDec();
+		return tempList.ListGreaterThan(alt_grade);
 	}
+	
 }

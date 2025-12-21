@@ -30,4 +30,16 @@ public class MTLoGrade implements ILoGrade {
 	public ILoGrade insertByOrder(GradeRecord that) {
 		return new ConsLoGrade(that, new MTLoGrade());
 	}
+
+	@Override
+	public double getTotal() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public ILoGrade ListGreaterThan(double alt_grade) {
+		// TODO Auto-generated method stub
+		return new MTLoGrade();
+	}
 }

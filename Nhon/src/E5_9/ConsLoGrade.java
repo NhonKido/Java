@@ -23,8 +23,13 @@ public class ConsLoGrade implements ILoGrade{
 	@Override
 	public double getAverage() {
 		int manyGrade = this.getGradeNum();
-		double total =  this.first.getTotal() + this.rest.getTotal();
+		double total =  this.getTotal();
 		return total / manyGrade;
+	}
+	
+	@Override
+	public double getTotal() {
+		return this.first.getTotal() + this.rest.getTotal();
 	}
 
 	@Override
@@ -43,6 +48,14 @@ public class ConsLoGrade implements ILoGrade{
 			return new ConsLoGrade(this.first, this.rest.insertByOrder(that));
 		}
 		return new ConsLoGrade(that, this);
+	}
+
+	@Override
+	public ILoGrade ListGreaterThan(double alt_grade) {
+		if(this.first.getGrade() > alt_grade) {
+			return new ConsLoGrade(this.first, this.rest.ListGreaterThan(alt_grade));
+		}
+		return new MTLoGrade();
 	}
 	
 }
