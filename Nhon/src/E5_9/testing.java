@@ -23,11 +23,13 @@ public class testing extends TestCase {
 	}
 	
 	public void testmethod() {
+		//properties
 		ILoGrade empty,all;
 		Course course1,course2, course3;
 		GradeRecord record1, record2, record3;
 		ScoreBoard nhon;
 		
+		//init
 		course1 = new Course(12, 15, "dao lua");
 		course2 = new Course(43, 20,"ban quat");
 		course3 = new Course(26,12,"xao tro");
@@ -44,15 +46,22 @@ public class testing extends TestCase {
 		//before sort //run
 		System.out.println(nhon.toString());
 		
+		// restart nhon
 		nhon = new ScoreBoard("Nhon Dang", "dh25dtc",all);
 		
 		//15 + 20 + 12
 		assertEquals(47, nhon.howManyCredit());
 		
-		//(19292*91.1 + 8832*84.0 + 13*100)/3 = 4,945,733,393.3
+		//(90*15 + 80*20 + 100*12) / 47 = 1383.3
 		assertEquals(1383.3, nhon.gradeAverage(),0.1);
-		System.out.println(nhon.gradeAverage());
 		
+		//test create list greater than 80
+		System.out.println("Grades greater than 80:");
+		System.out.println(nhon.ListGreaterThan(80).toString());
+		
+		//test equals
+		ScoreBoard nhon2 = new ScoreBoard("Nhon Dang", "dh25dtc",all);
+		assertTrue(nhon.equals(nhon2));
 		
 	 	
 	}
