@@ -13,8 +13,5 @@ public class BookTest extends TestCase {
 		System.out.println(all.toString());
 	}
 	
-	protected void setUp() throws Exception {
-		super.setUp();
-	}
 
 }
