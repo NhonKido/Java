@@ -2,11 +2,15 @@ package E5_10;
 
 public class Square extends AShape{
 	private int size;
+	
+	public Square(CartPT location, int size) {
+		this.location = location;
+		this.size = size;
+	}
 
 	@Override
 	public double distanceTo0() {
-		// TODO Auto-generated method stub
-		return 0;
+		;
 	}
 
 	@Override
