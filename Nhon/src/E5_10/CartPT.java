@@ -30,4 +30,15 @@ public class CartPT {
 		x += dx;
 		y += dy;
 	}
+
+    @Override
+    public boolean equals(Object obj) {
+    	if((obj==null) || !(obj instanceof CartPT)) {
+			return false;
+		}
+		else {
+			CartPT that = (CartPT) obj;
+			return this.x == that.x && this.y == that.y;
+		}
+    }
 }

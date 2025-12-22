@@ -27,6 +27,15 @@ public class Square extends AShape{
 	public double perimeter() {
 		return this.size*4;
 	}
+
+	@Override
+	public boolean contain(CartPT that) {
+		int x = this.location.getX();
+		int y = this.location.getY();
+		
+		return ShapeUtil.inRange(that.getX(), x - this.size, x + this.size)
+				&& ShapeUtil.inRange(that.getY(), y - this.size, y + this.size);
+	}
 	
 	
 }

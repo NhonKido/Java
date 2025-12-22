@@ -29,5 +29,10 @@ public class Dot extends AShape {
 		return -1;
 	}
 
+	@Override
+	public boolean contain(CartPT that) {
+		return that.getX()==this.location.getX() && this.location.getY()==that.getY();
+	}
+
 
 }
