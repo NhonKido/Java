@@ -27,8 +27,8 @@ public class CartPT {
 	}
 	
 	public void move(int dx, int dy) {
-		x += dx;
-		y += dy;
+		this.x += dx;
+		this.y += dy;
 	}
 
     @Override
@@ -40,5 +40,10 @@ public class CartPT {
 			CartPT that = (CartPT) obj;
 			return this.x == that.x && this.y == that.y;
 		}
+    }
+
+    @Override
+    public String toString() {
+        return "(" + this.x + "," + this.y + ")";
     }
 }

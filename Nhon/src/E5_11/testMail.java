@@ -1,4 +1,4 @@
-package ex;
+package E5_11;
 
 import junit.framework.TestCase;
 

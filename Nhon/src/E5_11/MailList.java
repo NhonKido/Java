@@ -1,4 +1,4 @@
-package ex;
+package E5_11;
 
 public class MailList {
 	private String from, mess;

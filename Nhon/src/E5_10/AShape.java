@@ -5,11 +5,9 @@ public abstract class AShape implements IShape {
 	protected CartPT location;
 	
 	public abstract double area();
-	//public abstract boolean contains(CartPT point);
-	public abstract Rectangle boundingBox();
 	public abstract double perimeter();
-	public abstract boolean contain(CartPT that);
 	public abstract double distanceTo0();
+	
 	@Override
 	public boolean equals(Object obj) {
 		if((obj==null) || !(obj instanceof AShape)) {
@@ -23,4 +21,10 @@ public abstract class AShape implements IShape {
 					&& this.contain(that.location);
 		}
 	}
+
+    @Override
+    public String toString() {
+        String cls = this.getClass().getSimpleName();
+        return cls + "@" + this.location.toString() + "[area=" + this.area() + ",perimeter=" + this.perimeter() + "]";
+    }
 }

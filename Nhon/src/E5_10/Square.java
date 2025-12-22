@@ -33,9 +33,13 @@ public class Square extends AShape{
 		int x = this.location.getX();
 		int y = this.location.getY();
 		
-		return ShapeUtil.inRange(that.getX(), x - this.size, x + this.size)
-				&& ShapeUtil.inRange(that.getY(), y - this.size, y + this.size);
+		return ShapeUtil.inRange(that.getX(), x, x + this.size)
+				&& ShapeUtil.inRange(that.getY(), y, y + this.size);
 	}
 	
-	
+    @Override
+    public String toString() {
+        return "Square@" + this.location.toString() + "(size=" + this.size + ")";
+    }
+    
 }

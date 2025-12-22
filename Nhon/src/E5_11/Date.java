@@ -1,4 +1,4 @@
-package ex;
+package E5_11;
 
 public class Date {
 	private int day, month, year;

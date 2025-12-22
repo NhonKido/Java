@@ -45,22 +45,16 @@ public class testing extends TestCase {
 		double circleArea = circle1.area();
 		double rectangleArea = rectangle1.area();
 		double squareArea = square1.area();
-		double dotArea = -1; // dot has no area
 		assertEquals(100*100*Math.PI, circleArea);
 		assertEquals((double)(50*100), rectangleArea);
 		assertEquals((double)(150*150), squareArea);
-		assertFalse((0==dotArea));
-		//test perimeter
-		double circlePerimeter = circle1.perimeter();
-		double rectanglePerimeter = rectangle1.perimeter();
-		double squarePerimeter = square1.perimeter();
-		double dotPerimeter = -1; // dot has no perimeter
-		assertEquals(2*Math.PI*100, circlePerimeter);
-		assertEquals((double)(2*(50+100)), rectanglePerimeter);
-		assertEquals((double)(4*150), squarePerimeter);
-		assertFalse((0==dotPerimeter));
 		
-		//test boundingBox	
+		//test perimeter
+		assertEquals(2*Math.PI*100, circle1.perimeter());
+		assertEquals((double)(2*(50+100)), rectangle1.perimeter());
+		assertEquals((double)(4*150), square1.perimeter());
+		
+		//test boundingBox
 		assertTrue(circle1.boundingBox().equals(new Rectangle(new CartPT(0,200),200,200)));
 		assertTrue(rectangle1.boundingBox().equals(new Rectangle(new CartPT(100,150),50,100)));
 		
@@ -70,7 +64,13 @@ public class testing extends TestCase {
 		assertTrue(rectangle1.contain(new CartPT(120,180))); // inside rectangle
 		assertFalse(rectangle1.contain(new CartPT(200,300))); // outside rectangle
 		
+		//test contain in CompositeShape
+		assertFalse(boss.contain(new CartPT(50,700)));
+		assertTrue(boss.contain(new CartPT(101,205)));
 		
+		//test boundingBox in CompositeShape
+		IShape bossBox = boss.boundingBox();
+		assertTrue(bossBox.equals(new Rectangle(new CartPT(0,150),650,600)));
 		
 		
 	}

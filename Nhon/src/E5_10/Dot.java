@@ -14,25 +14,30 @@ public class Dot extends AShape {
 	@Override
 	public double area() {
 		// TODO Auto-generated method stub
-		return -1;
+		return 0;
 	}
 
 	@Override
 	public Rectangle boundingBox() {
 		// TODO Auto-generated method stub
-		return null;
+		return new Rectangle(this.location, 0, 0);
 	}
 
 	@Override
 	public double perimeter() {
 		// TODO Auto-generated method stub
-		return -1;
+		return 0;
 	}
 
 	@Override
 	public boolean contain(CartPT that) {
 		return that.getX()==this.location.getX() && this.location.getY()==that.getY();
 	}
+
+    @Override
+    public String toString() {
+        return "Dot@" + this.location.toString();
+    }
 
 
 }

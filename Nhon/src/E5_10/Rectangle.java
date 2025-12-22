@@ -1,7 +1,11 @@
 package E5_10;
 
 public class Rectangle extends AShape{
+	//dx = weight, dy = height
 	private int dx,dy;
+	
+	public int getWid() { return this.dx; }
+    public int getHei() { return this.dy; }
 	
 	public Rectangle(CartPT location, int dx, int dy) {
 		this.location = location;
@@ -35,8 +39,13 @@ public class Rectangle extends AShape{
 		int x = this.location.getX();
 		int y = this.location.getY();
 		
-		return ShapeUtil.inRange(that.getX(), x - this.dx, x + this.dx)
-				&& ShapeUtil.inRange(that.getY(), y - this.dy, y + this.dy);
+		return ShapeUtil.inRange(that.getX(), x, x + this.dx)
+				&& ShapeUtil.inRange(that.getY(), y, y + this.dy);
 	}
+
+    @Override
+    public String toString() {
+        return "Rectangle@" + this.location.toString() + "(w=" + this.dx + ",h=" + this.dy + ")";
+    }
 
 }

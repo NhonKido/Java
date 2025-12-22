@@ -32,6 +32,12 @@ public class Circle extends AShape{
 	public boolean contain(CartPT that) {
 		return this.location.distanceTo(that) <= this.r;
 	}
-	
-	
+
+    @Override
+    public String toString() {
+        return "Circle@" + this.location.toString() + "(r=" + this.r + ")";
+    }
+
+
+    
 }
