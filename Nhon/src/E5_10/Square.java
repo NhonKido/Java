@@ -10,25 +10,22 @@ public class Square extends AShape{
 
 	@Override
 	public double distanceTo0() {
-		;
+		return this.location.distanceTo0();
 	}
 
 	@Override
 	public double area() {
-		// TODO Auto-generated method stub
-		return 0;
+		return size*size;
 	}
 
 	@Override
 	public Rectangle boundingBox() {
-		// TODO Auto-generated method stub
-		return null;
+		return new Rectangle(this.location, this.size, this.size);
 	}
 
 	@Override
 	public double perimeter() {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.size*4;
 	}
 	
 	

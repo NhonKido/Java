@@ -11,7 +11,7 @@ public class Rectangle extends AShape{
 
 	@Override
 	public double distanceTo0() {
-		return 0;
+		return this.location.distanceTo0();
 	}
 
 	@Override
