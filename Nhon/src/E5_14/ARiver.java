@@ -4,4 +4,5 @@ public abstract class ARiver {
 	protected Location location;
 	protected double len;
 	
+	
 }
