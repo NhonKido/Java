@@ -12,12 +12,5 @@ public class SaveACC extends Bank{
 		this.curBalance = curBalance;
 	}
 	
-	@Override
-	public void printTest() {
-		System.out.println("Account ID: " + idNum);
-		System.out.println("Customer Name: " + CusName);
-		System.out.println("Interest Rate: " + interestRate);
-		System.out.println("Current Balance: " + curBalance);
-	}
 	
 }

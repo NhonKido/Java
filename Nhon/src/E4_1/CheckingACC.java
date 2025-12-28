@@ -12,9 +12,6 @@ public class CheckingACC extends Bank{
 		this.minBalance = minBalance;
 	}
 	
-	@Override
-	public void printTest() {
-		System.out.printf("id: %s; customer: %s ; current balance: %s ;",this.idNum,this.CusName, this.curBalance);
-	}
+
 	
 }

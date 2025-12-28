@@ -12,6 +12,6 @@ public abstract class Bank implements IBank{
 		
 	}
 	
-	public abstract void printTest();
+
 
 }

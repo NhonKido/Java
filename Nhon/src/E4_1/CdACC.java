@@ -14,9 +14,5 @@ public class CdACC extends Bank{
 		this.maturityDate = maturityDate;
 	}
 	
-	@Override
-	public void printTest() {
-		System.out.printf("id: %s; customer: %s ; current balance: %s ;",this.idNum,this.CusName, this.curBalance);
-	}
-	
+
 }
